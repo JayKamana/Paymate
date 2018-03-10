@@ -18,5 +18,13 @@
         return true;
       return false;
     }
+
+    public function getTransactions(){
+      $this->db->query('SELECT * FROM transactions ORDER BY created_at DESC');
+      
+      $results = $this->db->resultset();
+
+      return $results;
+    }
   }
 ?>
